@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4bccca"
+
+    tools:context=".MainActivity">
+
+    <!--recycler view to display our chats-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVChats"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/idLLMessage" />
+
+    <LinearLayout
+        android:id="@+id/idLLMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="5.1">
+
+        <!--edit text to enter message-->
+        <EditText
+            android:id="@+id/idEdtMessage"
+            android:layout_width="1dp"
+            android:layout_height="48dp"
+            android:layout_weight="4.1"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:hint="Enter a Message " />
+
+        <!--button to send message-->
+        <ImageButton
+            android:id="@+id/idIBSend"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="#ffbd03"
+            android:contentDescription="@string/material_motion_easing_accelerated"
+            android:minHeight="48dp"
+            android:src="@android:drawable/ic_menu_send"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>

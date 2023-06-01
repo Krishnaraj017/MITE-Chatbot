@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".WelcomeActivity">
+
+    <!-- Background image -->
+    <!-- Replace '@drawable/welcome_background' with the actual name of your background image -->
+    <ImageView
+        android:id="@+id/imageBackground"
+        android:layout_width="410dp"
+        android:layout_height="605dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/_002_i039_010_chatbot_messenger_ai_isometric_set_05" />
+
+    <!-- App name -->
+
+
+    <TextView
+        android:id="@+id/textAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="105dp"
+
+        android:layout_marginBottom="1dp"
+        android:letterSpacing="0.1"
+        android:lineSpacingExtra="8dp"
+        android:padding="16dp"
+        android:shadowColor="#600000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="MITE BOT"
+
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/btnGetStarted"
+        style="@style/ShapeAppearance.Material3.Corner.ExtraLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:background="#000000"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingTop="1dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="2dp"
+        android:text="Get Started"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+
+</RelativeLayout>
