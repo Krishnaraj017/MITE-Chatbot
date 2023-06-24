@@ -3,9 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.157" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/drawable/custom_button_background.xml" value="0.236" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/drawable/custom_edittext.xml" value="0.2545" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/drawable/lavender_round.xml" value="0.2545" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/drawable/rounded_rectangle.xml" value="0.236" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/drawable/white_box.xml" value="0.2555" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/activity_main.xml" value="0.2908622908622909" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/activity_sign_up.xml" value="0.19273504273504274" />
         <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/activity_welcome.xml" value="0.264" />
         <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/bot_msg.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/custom_edittext.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/login.xml" value="0.264" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/login_page.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/rounded_rectangle.xml" value="0.25" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/sign_in.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/sign_up.xml" value="0.25" />
         <entry key="..\:/Users/Krishnaraj/Desktop/KrishBot/app/src/main/res/layout/user_msg.xml" value="0.264" />
       </map>
     </option>

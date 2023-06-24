@@ -5,29 +5,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".WelcomeActivity">
+    tools:context=".WelcomeActivity"
+    tools:ignore="ExtraText">
 
     <!-- Background image -->
     <!-- Replace '@drawable/welcome_background' with the actual name of your background image -->
     <ImageView
         android:id="@+id/imageBackground"
         android:layout_width="410dp"
-        android:layout_height="605dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="620dp"
+        android:layout_marginTop="3dp"
         android:scaleType="centerCrop"
         android:src="@drawable/_002_i039_010_chatbot_messenger_ai_isometric_set_05" />
 
     <!-- App name -->
-
-
     <TextView
         android:id="@+id/textAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="75dp"
         android:layout_marginTop="1dp"
-        android:layout_marginLeft="105dp"
-
         android:layout_marginBottom="1dp"
         android:letterSpacing="0.1"
         android:lineSpacingExtra="8dp"
@@ -36,33 +33,51 @@
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="2"
-        android:text="MITE BOT"
-
+        android:text="MITE CHATBOT"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold|italic" />
 
-    <Button
-        android:id="@+id/btnGetStarted"
-        style="@style/ShapeAppearance.Material3.Corner.ExtraLarge"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp"
-        android:background="#000000"
-        android:elevation="4dp"
-        android:paddingStart="16dp"
-        android:paddingTop="1dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="2dp"
-        android:text="Get Started"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_marginBottom="19dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
+        <!-- Logout button -->
+        <TextView
+            android:id="@+id/btnLogout"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/white_box"
+            android:gravity="center"
+            android:onClick="logoutUser"
+            android:text="Sign Out"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="22sp" />
 
-
+        <!-- Get Started TextView -->
+        <TextView
+            android:id="@+id/btnGetStarted"
+            android:layout_width="125dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/custom_button_background"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:text="Get Started"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 </RelativeLayout>

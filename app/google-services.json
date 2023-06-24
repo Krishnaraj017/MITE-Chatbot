@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "845606614628",
+    "project_id": "mite-chatbot",
+    "storage_bucket": "mite-chatbot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845606614628:android:4577807837dedb7c849171",
+        "android_client_info": {
+          "package_name": "com.krish.krishbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845606614628-n6qve08s3o0vf5i8gf56kq8rsf4og3ka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.krish.krishbot",
+            "certificate_hash": "4ca03ae80960c3a255e37395e66fb88bc13cbc78"
+          }
+        },
+        {
+          "client_id": "845606614628-imden07bj9ai2ofa9ld2t6eh0fcl949i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMcpRUvdp2_hrbRhN9dU-FGnxVClvNEpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845606614628-imden07bj9ai2ofa9ld2t6eh0fcl949i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

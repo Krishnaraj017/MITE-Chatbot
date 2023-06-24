@@ -1,14 +1,15 @@
 package com.krish.krishbot;
+
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,6 +19,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.krish.krishbot.MessageModal;
+import com.krish.krishbot.WelcomeActivity;
 
 import org.json.JSONException;
 
@@ -32,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        // Remove the app name from the title bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
@@ -93,5 +94,12 @@ public class MainActivity extends AppCompatActivity {
                     messageRVAdapter.notifyDataSetChanged();
                 });
         queue.add(jsonObjectRequest);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

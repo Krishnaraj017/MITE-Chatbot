@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/green_yellow" />
+    <stroke
+        android:color="@color/gold"
+        android:width="3dp"/>
+    <!-- Set the desired background color, e.g., yellow -->
+    <corners android:radius="150dp" /> <!-- Set the corner radius to 0dp for a rectangular shape -->
+</shape>
