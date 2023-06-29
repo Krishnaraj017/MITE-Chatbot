@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8E6CD5"
+    android:background="#ffffff"
 
     tools:context=".MainActivity">
 
@@ -28,7 +28,7 @@
         <EditText
             android:id="@+id/idEdtMessage"
             android:layout_width="1dp"
-            android:layout_height="48dp"
+            android:layout_height="50dp"
             android:layout_weight="4.1"
             android:background="#000000"
             android:textColor="#ffffff"

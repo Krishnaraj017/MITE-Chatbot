@@ -23,7 +23,7 @@
             android:layout_margin="5dp"
             android:padding="3dp"
             android:text="User message"
-            android:textColor="#ffffff" />
+            android:textColor="@color/red" />
 
         <!--we are displaying user icon-->
         <ImageView

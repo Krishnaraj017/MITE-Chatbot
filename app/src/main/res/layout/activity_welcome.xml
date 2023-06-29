@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity"
+    android:background="@color/white"
     tools:ignore="ExtraText">
 
     <!-- Background image -->
@@ -13,8 +14,8 @@
     <ImageView
         android:id="@+id/imageBackground"
         android:layout_width="410dp"
-        android:layout_height="620dp"
-        android:layout_marginTop="3dp"
+        android:layout_height="622dp"
+        android:layout_marginTop="1dp"
         android:scaleType="centerCrop"
         android:src="@drawable/_002_i039_010_chatbot_messenger_ai_isometric_set_05" />
 
@@ -43,40 +44,47 @@
     <LinearLayout
         android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="95dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="19dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+
+        android:background="@drawable/linearshape"
         android:gravity="center"
+
         android:orientation="horizontal">
 
         <!-- Logout button -->
         <TextView
             android:id="@+id/btnLogout"
-            android:layout_width="100dp"
-            android:layout_height="38dp"
+            android:layout_width="112dp"
+            android:layout_height="46dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/white_box"
+            android:background="@drawable/white_box1"
             android:gravity="center"
             android:onClick="logoutUser"
-            android:text="Sign Out"
+            android:text="SIGNOUT"
             android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="22sp" />
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <!-- Get Started TextView -->
         <TextView
             android:id="@+id/btnGetStarted"
-            android:layout_width="125dp"
+            android:layout_width="126dp"
             android:layout_height="45dp"
             android:layout_marginLeft="60dp"
+            android:layout_marginTop="11dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/custom_button_background"
+            android:background="@drawable/white_box"
             android:gravity="center"
-            android:paddingTop="2dp"
-            android:text="Get Started"
-            android:textColor="#000000"
+            android:paddingTop="1dp"
+            android:text="GET STARTED"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>

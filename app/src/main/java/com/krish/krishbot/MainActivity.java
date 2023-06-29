@@ -1,99 +1,93 @@
 package com.krish.krishbot;
 
-import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import com.krish.krishbot.MessageModal;
-import com.krish.krishbot.WelcomeActivity;
-
-import org.json.JSONException;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText userMsgEdt;
-    private final String BOT_KEY = "bot";
-    private ArrayList<MessageModal> messageModalArrayList;
-    private MessageRVAdapter messageRVAdapter;
+    private RecyclerView chatRecyclerView;
+    private ChatAdapter chatAdapter;
+    private EditText inputEditText;
+    private ImageButton sendButton;
+    private List<ChatMessage> chatMessages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initializeChatScreen();
-    }
+        chatRecyclerView = findViewById(R.id.idRVChats);
+        inputEditText = findViewById(R.id.idEdtMessage);
+        sendButton = findViewById(R.id.idIBSend);
 
-    private void initializeChatScreen() {
-        RecyclerView chatsRV = findViewById(R.id.idRVChats);
-        ImageButton sendMsgIB = findViewById(R.id.idIBSend);
-        userMsgEdt = findViewById(R.id.idEdtMessage);
+        // Set up the RecyclerView and its adapter
+        chatMessages = new ArrayList<>();
+        chatAdapter = new ChatAdapter(chatMessages);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        chatRecyclerView.setLayoutManager(layoutManager);
+        chatRecyclerView.setAdapter(chatAdapter);
 
-        RequestQueue mRequestQueue = Volley.newRequestQueue(MainActivity.this);
-        mRequestQueue.getCache().clear();
-
-        messageModalArrayList = new ArrayList<>();
-        sendMsgIB.setOnClickListener(v -> {
-            if (userMsgEdt.getText().toString().isEmpty()) {
-                Toast.makeText(MainActivity.this, "Please enter your message..", Toast.LENGTH_SHORT).show();
-                return;
+        inputEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    sendMessage();
+                    return true;
+                }
+                return false;
             }
-            sendMessage(userMsgEdt.getText().toString());
-            userMsgEdt.setText("");
         });
 
-        messageRVAdapter = new MessageRVAdapter(messageModalArrayList, this);
-        chatsRV.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.VERTICAL, false));
-        chatsRV.setAdapter(messageRVAdapter);
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendMessage();
+            }
+        });
+    }
+    private void sendMessage() {
+        String userInput = inputEditText.getText().toString().trim();
+        if (!userInput.isEmpty()) {
+            ChatBotResponse botResponse = ChatBotData.getResponse(userInput);
+            String response = botResponse.getMessage();
+
+            addChatMessage(true, userInput);
+            addChatMessage(false, response);
+
+            if (botResponse.getUrl() != null) {
+                // Handle URL click event here
+                // You can open the URL in a browser or perform any other action
+                // Replace "https://example.com" with the actual URL from the response
+                String url = botResponse.getUrl();
+                // Example: Opening the URL in a browser
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(browserIntent);
+            }
+
+            inputEditText.setText("");
+            chatRecyclerView.smoothScrollToPosition(chatAdapter.getItemCount() - 1);
+        }
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    private void sendMessage(String userMsg) {
-        String USER_KEY = "user";
-        messageModalArrayList.add(new MessageModal(userMsg, USER_KEY));
-        messageRVAdapter.notifyDataSetChanged();
 
-        String url = "http://api.brainshop.ai/get?bid=175431&key=8tiU6hgBqhyvzmQ8&uid=uid&msg=" + userMsg;
-        RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
-                response -> {
-                    try {
-                        String botResponse = response.getString("cnt");
-                        if (botResponse.isEmpty()) {
-                            botResponse = "No response from the bot.";
-                        }
-                        messageModalArrayList.add(new MessageModal(botResponse, BOT_KEY));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        messageModalArrayList.add(new MessageModal("No response", BOT_KEY));
-                    }
-                    messageRVAdapter.notifyDataSetChanged();
-                },
-                error -> {
-                    messageModalArrayList.add(new MessageModal("Sorry, an error occurred.", BOT_KEY));
-                    Toast.makeText(MainActivity.this, "No response from the bot..", Toast.LENGTH_SHORT).show();
-                    messageRVAdapter.notifyDataSetChanged();
-                });
-        queue.add(jsonObjectRequest);
+    private void addChatMessage(boolean isUserMessage, String message) {
+        ChatMessage chatMessage = new ChatMessage(isUserMessage, message);
+        chatMessages.add(chatMessage);
+        chatAdapter.notifyDataSetChanged();
     }
 
     @Override
