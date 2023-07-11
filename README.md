@@ -12,14 +12,7 @@ Welcome to the MITE Chatbot repository! This project aims to develop a chatbot t
 - **Exam and Assignment Reminders**: Automated reminders are sent to students for upcoming exams, assignment due dates, and project deadlines.
 - **Campus Navigation**: A campus navigation feature helps users find their way around the MITE campus, providing directions and maps.
 - **Library Catalog and Reservation**: Integration with the library system enables users to search for books, access digital resources, and reserve books online.
-- **Placement and Internship Updates**: Users receive information about placement drives, internship opportunities, and recruitment news from companies visiting MITE.
-- **Alumni Network**: Students and recent graduates can connect with MITE's alumni network, seeking mentorship and guidance.
-- **Research Project Collaboration**: Students can explore ongoing research projects at MITE and connect with faculty members for collaboration.
-- **News and Announcements**: Users are kept informed about the latest news, events, and important updates from MITE through a dedicated news section or push notifications.
-- **Student Feedback and Grievance Redressal**: A platform is provided for students to submit feedback, suggestions, or grievances to the college administration.
-- **Student Forum or Discussion Board**: A forum or discussion board facilitates academic discussions and peer-to-peer support.
-- **Social Media Integration**: Users can share information from the app to social media platforms, spreading awareness about MITE.
-
+- **Placement and Internship Updates**: Users receive information about placement drives, internship opportunities, and recruitment news from companies visiting 
 ## Installation and Setup
 
 1. Clone the repository:
@@ -32,12 +25,7 @@ Welcome to the MITE Chatbot repository! This project aims to develop a chatbot t
 
 Contributions to this project are welcome! If you find any issues or want to add new features, feel free to open an issue or submit a pull request. Please ensure that your contributions align with the project's coding standards and guidelines.
 
-## Contact
 
-If you have any questions, suggestions, or feedback, please feel free to reach out to us:
-
-- Project Lead: [Krishnaraj S](mailto:krishnarajshetty699@gmail.com)
-- Website: [MITE Website](https://www.mite.ac.in)
 
 
 
