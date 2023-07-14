@@ -24,6 +24,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
+   // The getItemViewType() method returns the view type based on whether the chat message is from the user or the bot.
     public int getItemViewType(int position) {
         ChatMessage chatMessage = chatMessages.get(position);
         return chatMessage.isUserMessage() ? VIEW_TYPE_USER : VIEW_TYPE_BOT;
@@ -45,6 +46,8 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
+   // The onCreateViewHolder() method is responsible for creating the view holders for the user and bot messages.
+   // It inflates the corresponding layout files user_msg.xml and bot_msg.xml and returns the appropriate view holder based on the view type.
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ChatMessage chatMessage = chatMessages.get(position);
 
@@ -58,6 +61,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
+    //Determine the item count: The getItemCount() method returns the total number of chat messages in the list.
     public int getItemCount() {
         return chatMessages.size();
     }
@@ -74,7 +78,8 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             userTextView.setText(chatMessage.getMessage());
         }
     }
-
+    //BotMessageViewHolder checks for it using the isUrl() method. If a URL is detected, it sets an OnClickListener on the botTextView to handle the click event. When clicked,
+    //it extracts the URL from the message using the extractUrl() method and opens the URL in a browser or performs any other action.
     private static class BotMessageViewHolder extends RecyclerView.ViewHolder {
         private TextView botTextView;
 

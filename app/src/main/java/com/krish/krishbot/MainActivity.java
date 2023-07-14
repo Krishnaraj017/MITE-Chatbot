@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private List<ChatMessage> chatMessages;
 
     @Override
+   // the RecyclerView and its adapter (ChatAdapter) are initialized and set up.
+   // The adapter is responsible for managing the chat messages and binding them to the views in the RecyclerView.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         chatRecyclerView.setLayoutManager(layoutManager);
         chatRecyclerView.setAdapter(chatAdapter);
-
+       // EditText and ImageButton setup
+        //The EditText (inputEditText) is used for user input, and the ImageButton (sendButton) triggers the sending of messages.
         inputEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
